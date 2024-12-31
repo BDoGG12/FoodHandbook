@@ -1,11 +1,12 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { SafeAreaView, Text, StyleSheet } from 'react-native';
+import SearchBar from "@/components/search-bar/SearchBar";
 
 const SearchScreen: React.FC = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Search Screen</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <SearchBar />
+    </SafeAreaView>
   );
 };
 
