@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const BookmarkScreen: React.FC = () => {
+// Favorited Recipes
+const FavoritesScreen: React.FC = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Bookmark Screen</Text>
+      <Text style={styles.text}>Favorites Screen</Text>
     </View>
   );
 };
@@ -22,4 +23,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default BookmarkScreen;
+export default FavoritesScreen;
