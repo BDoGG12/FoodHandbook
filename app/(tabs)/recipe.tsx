@@ -1,10 +1,12 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
+
+// Saved Recipes
 const RecipeScreen: React.FC = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Recipe Screen</Text>
+      <Text style={styles.text}>Saved Recipes</Text>
     </View>
   );
 };
