@@ -1,6 +1,10 @@
-import React from 'react';
+import {useState} from 'react';
 import { SafeAreaView, Text, StyleSheet } from 'react-native';
+import { fetchMealsByCategory } from "@/services/recipeServices";
 import SearchBar from "@/components/search-bar/SearchBar";
+
+// Objective: List all meals based by category
+// Expected: User should see search result popuplate as they type and select the meal category
 
 const SearchScreen: React.FC = () => {
   return (
