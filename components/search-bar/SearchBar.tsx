@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Dropdown } from "react-native-element-dropdown";
 import {
   StyleSheet,
   TextInput,
@@ -19,19 +20,16 @@ const SearchBar = () => {
       behavior={Platform.OS === "ios" ? "padding" : "height"}
     >
       <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
-        <View style={styles.container}>
-          <View style={styles.searchContainer}>
-            <TextInput
-              style={styles.input}
-              onChangeText={setSearchText}
-              value={searchText}
-              textAlign="left"
-            />
-            <TouchableOpacity style={styles.button}>
-              <Text style={styles.buttonText}>Go</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
+        <Dropdown
+          style={styles.dropdown}
+          placeholderStyle={styles.placeholderStyle}
+          selectedTextStyle={styles.selectedTextStyle}
+          inputSearchStyle={styles.inputSearchStyle}
+          iconStyle={styles.iconStyle}
+          data={data}
+          search
+          labelField={}
+          />
       </TouchableWithoutFeedback>
     </KeyboardAvoidingView>
   );
@@ -63,6 +61,33 @@ const styles = StyleSheet.create({
     color: "white",
     fontWeight: "semibold",
   },
+  dropdown: {
+    margin: 16,
+    height: 50,
+    backgroundColor: 'white',
+    borderRadius: 12,
+    padding: 12,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1
+    },
+    shadowOpacity: 0.2,
+  },
+  placeholderStyle: {
+    fontSize: 16
+  },
+  selectedTextStyle: {
+    fontSize: 16
+  },
+  iconStyle: {
+    width: 20,
+    height: 20
+  },
+  inputSearchStyle: {
+    height: 40,
+    fontSize: 16
+  }
 });
 
 export default SearchBar;
