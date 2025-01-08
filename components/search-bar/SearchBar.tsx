@@ -11,9 +11,21 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
 } from "react-native";
+import AntDesign from "@expo/vector-icons/AntDesign";
 
 const SearchBar = () => {
-  const [searchText, setSearchText] = useState("");
+  const [value, setValue] = useState('');
+
+  const data = [
+    { label: 'Item 1', value: '1' },
+    { label: 'Item 2', value: '2' },
+    { label: 'Item 3', value: '3' },
+    { label: 'Item 4', value: '4' },
+    { label: 'Item 5', value: '5' },
+    { label: 'Item 6', value: '6' },
+    { label: 'Item 7', value: '7' },
+    { label: 'Item 8', value: '8' },
+  ];
 
   return (
     <KeyboardAvoidingView
@@ -28,7 +40,16 @@ const SearchBar = () => {
           iconStyle={styles.iconStyle}
           data={data}
           search
-          labelField={}
+          labelField={'label'}
+          valueField={'value'}
+          searchPlaceholder="Search..."
+          value={value}
+          onChange={item => {
+            setValue(item.value);
+          }}
+          renderLeftIcon={() => (
+            <AntDesign style={styles.icon} color={'black'} name="Safety" size={20} />
+          )}
           />
       </TouchableWithoutFeedback>
     </KeyboardAvoidingView>
@@ -64,6 +85,7 @@ const styles = StyleSheet.create({
   dropdown: {
     margin: 16,
     height: 50,
+    width: 150,
     backgroundColor: 'white',
     borderRadius: 12,
     padding: 12,
@@ -73,6 +95,9 @@ const styles = StyleSheet.create({
       height: 1
     },
     shadowOpacity: 0.2,
+  },
+  icon: {
+    marginRight: 5
   },
   placeholderStyle: {
     fontSize: 16
