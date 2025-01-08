@@ -14,24 +14,9 @@ export const fetchCategories = async () => {
     }
 }
 
-export const fetchRecipeByCategory = async (category: string) => {
-
+export const fetchMealsByCategory = async (category: string) => {
     try {
-        const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`)
-        if (!response.ok) {
-            throw new Error('Failed to fetch recipes')
-        }
-        const data = await response.json()
-        return data.results
-    } catch (error) {
-        console.log(error)
-        throw error
-    }
-}
-
-export const fetchMealsByFirstLetter = async (letter: string) => {
-    try {
-        const response = await fetch(`www.themealdb.com/api/json/v1/1/search.php?f=${letter}`)
+        const response = await fetch(`www.themealdb.com/api/json/v1/1/filter.php?c=${category}`)
         if (!response.ok) {
             throw new Error('Failed to fetch recipes')
         }
